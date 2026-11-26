@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>After the Rain — Ant POV Magical Forest</title>
+  <script type="module" crossorigin src="/assets/index-CWfCk-P6.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BwxtXgdS.css">
+</head>
+<body>
+  <div id="canvas-container"></div>
+
+  <!-- Loading Overlay -->
+  <div id="loading-screen">
+    <div class="loader-card">
+      <div class="droplet-spinner"></div>
+      <h2>Synthesizing Micro-Forest</h2>
+      <p id="loading-status">Generating high-resolution organic PBR textures...</p>
+      <div class="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Start / Pause Splash Overlay -->
+  <div id="intro-overlay" class="hidden">
+    <div class="glass-panel">
+      <span class="eyebrow">REALTIME MACRO SIMULATION • 1 UNIT = 1 MM</span>
+      <h1>After the Rain</h1>
+      <p class="subtitle">
+        Explore a sunlit magical forest floor after a fresh downpour from the perspective of an ant.
+        Brush past towering wet grass blades, watch refracting raindrops tremble in the breeze, and roam freely across mossy earth.
+      </p>
+
+      <div class="controls-grid">
+        <div class="control-item"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span>Roam / Strafe</span></div>
+        <div class="control-item"><kbd>Mouse</kbd> <span>Look Around</span></div>
+        <div class="control-item"><kbd>F</kbd> <span>Toggle Ant Crawl / Free-Fly</span></div>
+        <div class="control-item"><kbd>Shift</kbd> <span>Scurry / Boost Speed</span></div>
+        <div class="control-item"><kbd>Space</kbd> <span>Hop (Ant) / Ascend (Fly)</span></div>
+        <div class="control-item"><kbd>C</kbd> / <kbd>Ctrl</kbd> <span>Crouch / Descend (Fly)</span></div>
+        <div class="control-item"><kbd>H</kbd> <span>Toggle Environment Panel</span></div>
+        <div class="control-item"><kbd>Esc</kbd> <span>Release Cursor</span></div>
+      </div>
+
+      <button id="enter-btn" type="button">Enter the Forest Floor</button>
+    </div>
+  </div>
+
+  <!-- Minimal In-Game HUD -->
+  <div id="hud" class="hidden">
+    <div class="hud-top-left">
+      <div class="mode-badge" id="mode-badge">
+        <span class="dot"></span>
+        <span id="mode-label">Ant Grounded POV</span>
+      </div>
+      <div class="telemetry" id="telemetry-text">Eye Height: 4.5 mm • Wind: Gentle Breeze</div>
+    </div>
+
+    <div class="crosshair"></div>
+
+    <!-- Collapsible Environment & Optics Panel -->
+    <aside id="env-panel" class="env-panel">
+      <div class="panel-header">
+        <span>Forest Atmosphere &amp; Optics</span>
+        <span class="panel-hint">[H]</span>
+      </div>
+
+      <label class="slider-row">
+        <span>Wind Intensity</span>
+        <input type="range" id="ctrl-wind" min="0" max="2.2" step="0.05" value="1.0" />
+      </label>
+
+      <label class="slider-row">
+        <span>Sunbreak Warmth</span>
+        <input type="range" id="ctrl-sun" min="0.3" max="2.0" step="0.05" value="1.25" />
+      </label>
+
+      <label class="slider-row">
+        <span>Ground Mist</span>
+        <input type="range" id="ctrl-fog" min="0.2" max="2.0" step="0.05" value="1.0" />
+      </label>
+
+      <label class="slider-row">
+        <span>Macro Bokeh (DoF)</span>
+        <input type="range" id="ctrl-dof" min="0" max="1.5" step="0.05" value="0.55" />
+      </label>
+
+      <label class="slider-row">
+        <span>Droplet Shedding</span>
+        <input type="range" id="ctrl-drip" min="0" max="2.5" step="0.1" value="1.0" />
+      </label>
+
+      <div class="panel-actions">
+        <button id="btn-toggle-mode" type="button">Switch Mode [F]</button>
+        <button id="btn-toggle-audio" type="button">Sound: On [M]</button>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>
